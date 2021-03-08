@@ -8,23 +8,21 @@ var questions = [
 
 // vars to keep track of
 var time = questions.length * 10;
-var timer;
 var currentQuestionIndex = 0;
-var startBtn = document.getElementById("start");
-var submitBtn = document.getElementById("submit");
-var timerEl = document.getElementById("time");
-var questionsEl = document.getElementById("questions");
-var choicesEl = document.getElementById("choices");
-
 
 //vars for Dom Elements
+var questionsEl = document.getElementById("questions");
+var timerEl = document.getElementById("time");
+var choicesEl = document.getElementById("choices");
+var submitBtn = document.getElementById("submit");
+var startBtn = document.getElementById("start");
+var timer;
 
+//start quiz page
 function startQuiz() {
   var startScreen = document.getElementById("start-screen");
-  startScreen.setAttribute("class", "hide");
-//hides the start screen
-  questionsEl.removeAttribute("class");
-//brings up the questions element 
+  startScreen.setAttribute("class", "hide"); //hides the start screen
+  questionsEl.removeAttribute("class"); //brings up the questions element 
   timer = setInterval(clockTick, 1000);
 
   timerEl.textContent = time;
@@ -70,7 +68,7 @@ function clockTick() {
 }
 
 function saveHighScore() {
-    
+
 }
 
 startBtn.onclick = startQuiz;
