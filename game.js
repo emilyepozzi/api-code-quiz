@@ -76,3 +76,4 @@ submitBtn.onclick = saveHighScore;
 
 
 
+fgargaergRfgbrfgdrgregerg
