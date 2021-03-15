@@ -73,7 +73,3 @@ function saveHighScore() {
 
 startBtn.onclick = startQuiz;
 submitBtn.onclick = saveHighScore;
-
-
-
-fgargaergRfgbrfgdrgregerg
