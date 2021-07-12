@@ -1,29 +1,27 @@
-function showHighscore() {
-    // getting high score in local storage or array
-    var highscore = JSON.parse(window.localStorage.getItem("highscores")) || [];
-  
-    // sort highscores by score property in descending order
-    highscore.sort(function(a, b) {
+function showHs() {
+    //getting stores from local storeage
+    var hs = JSON.parse(window.localStorage.getItem("hs")) || [];
+    hs.sort(function(a, b) {
       return b.score - a.score;
     });
   
-    highscore.forEach(function(score) {
-      // create li tag for each high score
-      var listTg = document.createElement("li");
-      listTg.textContent = score.initials + " - " + score.score;
+    hs.forEach(function(score) {
+      //creating list tags
+      var listTag = document.createElement("li");
+      listTag.textContent = score.initials + " - " + score.score;
   
-      // display on page
-      var orderedEl = document.getElementById("highscore");
-      orderedEl.appendChild(listTg);
+   //items on page displaying
+      var orderedList = document.getElementById("hs");
+      orderedList.appendChild(listTag);
     });
   }
-  
-  function clearHighscores() {
-    window.localStorage.removeItem("highscore");
+  //clearing high scores
+  function clearHs() {
+    window.localStorage.removeItem("hs");
     window.location.reload();
   }
   
-  document.getElementById("clear").onclick = clearHighscores;
+  document.getElementById("clear").onclick = clearHs;
   
-  // run function when page loads
-  showHighscore();
+  showHs();
+  
